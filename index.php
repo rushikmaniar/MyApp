@@ -17,9 +17,9 @@ try {
     $response = $api->paymentRequestCreate(array(
         "purpose" => "FIFA 16",
         "amount" => "15",
-        "send_email" => true,
-        "email" => "foma@utooemail.com",
-        "redirect_url" => "http://localhost/MyApp/response.php"
+        //"send_email" => true,
+        //"email" => "foma@utooemail.com",
+        "redirect_url" => "http://localhost:90/MyApp/response.php"
     ));
     echo '<pre>';
         print_r($response);

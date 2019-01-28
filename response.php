@@ -13,8 +13,11 @@ define('AUTH_TOKEN','test_9d1ffac0ee8f8daf79f014cd5dd');
 
 
 $api = new Instamojo(API_KEY, AUTH_TOKEN,'https://test.instamojo.com/api/1.1/');
+echo '<pre>';
+    print_r($api->paymentRequestStatus($_GET['payment_request_id']));
+echo '</pre>';exit;
 try {
-    $response = $api->paymentRequestPaymentStatus(['PAYMENT REQUEST ID'], ['PAYMENT ID']);
+    $response = $api->paymentRequestStatus($_GET['payment_request_id'], $_GET['payment_id']);
     print_r($response['purpose']);  // print purpose of payment request
     print_r($response['payment']['status']);  // print status of payment
 }
